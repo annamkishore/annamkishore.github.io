@@ -2,6 +2,46 @@
 
 let timetable = [
     {
+        topic: 'Science',
+        teacher: 'Zakiya',
+        time: 'Jul 8, 2020 09:00 AM',
+        meeting: {
+            link: 'https://us04web.zoom.us/j/73004946554?pwd=T0IzdVJ3SGVMYzA3dW5YdUdSbmY5dz09',
+            id: '730 0494 6554',
+            password: '1234'
+        }
+    },
+    {
+        topic: 'Hindi (FL)',
+        teacher: 'Arpana',
+        time: 'Jul 8, 2020 10:40 AM',
+        meeting: {
+            link: 'https://us04web.zoom.us/j/74506637136?pwd=eENFK2tBRUhOOEkvY01wQjQrbEVMdz09',
+            id: '745 0663 7136',
+            password: '3tD1yq'
+        }
+    },
+    {
+        topic: 'Social',
+        teacher: 'Ashwini',
+        time: 'Jul 8, 2020 12:20 PM',
+        meeting: {
+            link: 'https://us04web.zoom.us/j/71249126708?pwd=WGdVNmJKeDdWNUF2OVZOcnBML2ZYdz09',
+            id: '712 4912 6708',
+            password: '1994'
+        }
+    },
+    {
+        topic: 'Mathematics',
+        teacher: 'Rajni Kumari',
+        time: 'Jul 8, 2020 02:00 PM',
+        meeting: {
+            link: 'https://us04web.zoom.us/j/75695463522?pwd=VGloYXg3Rm05c284VGdLZ1VpVjZ4UT09',
+            id: '756 9546 3522',
+            password: '4Z4ggv'
+        }
+    },
+    {
         topic: 'English',
         teacher: 'Archana',
         time: 'Jul 7, 2020 12:20 PM',
@@ -12,43 +52,13 @@ let timetable = [
         }
     },
     {
-        topic: 'Second language telugu',
+        topic: 'Telugu (SL)',
         teacher: 'Srividya',
         time: 'Jul 7, 2020 10:40 AM',
         meeting: {
             link: 'https://us04web.zoom.us/j/76622273263?pwd=SzBYZzMza1dVZ29DRFJaUE13UEFpUT09',
             id: '766 2227 3263',
             password: '1234'
-        }
-    },
-    {
-        topic: 'Mathematics',
-        teacher: 'Rajni Kumari',
-        time: 'Jul 7, 2020 02:00 PM',
-        meeting: {
-            link: 'https://us04web.zoom.us/j/76542556203?pwd=cW9kZUhHUmU3WCtXVXh6WWxpM0tDdz09',
-            id: '765 4255 6203',
-            password: '3nwYxM'
-        }
-    },
-    {
-        topic: 'Science',
-        teacher: 'Zakiya',
-        time: 'Jul 7, 2020 12:20 PM',
-        meeting: {
-            link: 'https://us04web.zoom.us/j/74902064886?pwd=d3poZUwzeFZjRUx6dHY0VEhsb3BDZz09',
-            id: '749 0206 4886',
-            password: '123'
-        }
-    },
-    {
-        topic: 'Social',
-        teacher: 'Ashwini',
-        time: 'Jul 6, 2020 11:50 AM',
-        meeting: {
-            link: 'https://us04web.zoom.us/j/74714858107?pwd=QWhHeThGaGx2SU5jTURUeUNSTGFmUT09',
-            id: '747 1485 8107',
-            password: '7dtcvT'
         }
     }
 ];
