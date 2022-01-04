@@ -1,3 +1,96 @@
-<script>
-    window.location.href = "https://annamkishore.github.io/TalkingPad/src/web/apps.html";
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kishore Wall</title>
+
+    <style>
+        #shop1 a, #shop2 a {
+            margin: 10px;
+            padding: 10px;
+            color: darkcyan;
+            font-size: larger;
+            text-decoration: none;
+            border: 1px #92D0BD solid;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #1ec7e6;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        let appList = [
+            {
+                name: "My First Slate",
+                url: "https://play.google.com/store/apps/details?id=com.kish.myfirstslate",
+                imageURL: "https://lh3.googleusercontent.com/SEbVclhv-0VGglAo5ytoYF1tJiqZzc61j3I2DiKJ_XQsnOGXgIAv8kWSoNHVFEpCnPqc=w300-rw"
+            },
+            {
+                name: "15 Puzzle",
+                url: "https://play.google.com/store/apps/details?id=com.kish.puzzle15",
+                imageURL: "https://lh3.googleusercontent.com/om0w9VkkFc-D0X7_LJYI7leU8frW64I9P5Or85ntlOFTjSCy7WQZ931oGHYDPqg8pw=w300-rw"
+            },
+            {
+                name: "Games Den",
+                url: "https://play.google.com/store/apps/details?id=com.kish.gamesden",
+                imageURL: "https://lh3.googleusercontent.com/vHmdZZJFHQpaQ5z_gHaOj0hr-vGGECOgSs-OjLcB7xYCL1RiLb2P-WbWt4pniXNvd3g=w300-rw"
+            },
+            {
+                name: "Talking Slate",
+                url: "https://annamkishore.github.io/TalkingPad/src/web/LearnABC.html",
+                imageURL: "https://s3.amazonaws.com/kishorewall/talkingSlate.JPG"
+            },
+            {
+                name: "Talking Pad",
+                url: "https://annamkishore.github.io/TalkingPad/src/web/talkingPad.html",
+                imageURL: "https://s3.amazonaws.com/kishorewall/talkingPad.JPG"
+            }
+        ];
+
+        $(document).ready(function () {
+            renderPage();
+        });
+
+        function renderPage() {
+            // appList.slice(0, 3).forEach((app) => $("#shop1").append(`<a href="${app.url}">
+            //             <img width="100px" height="100px" src="${app.imageURL}"/>
+            //             <div style="margin-top: 10px">${app.name}</div>
+            //             </a>`));
+            appList.slice(3, 5).forEach((app) => $("#shop2").append(`<a href="${app.url}">
+                        <img width="100px" height="100px" src="${app.imageURL}"/>
+                        <div style="margin-top: 10px">${app.name}</div>
+                        </a>`));
+        }
+    </script>
+</head>
+<body>
+
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="200px">
+<div style="display: flex; flex-flow: wrap; margin-left: 100px" id="shop1">
+</div>
+
+<div style="
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: lightseagreen;
+    border-radius: 5px;
+    width: 160px;
+    padding: 5px;
+    font-size: x-large;
+    margin-left: 15px">
+    <table cellpadding="0">
+        <tr>
+            <td><img src="web.ico" width="40px"></td>
+            <td>Web</td>
+        </tr>
+    </table>
+</div>
+<div style="display: flex; flex-flow: wrap; margin-left: 100px" id="shop2">
+</div>
+
+</body>
+</html>
