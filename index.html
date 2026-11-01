@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kishore Wall</title>
 
-    <style>
-        #shop1 a, #shop2 a {
-            margin: 10px;
-            padding: 10px;
-            color: darkcyan;
-            font-size: larger;
-            text-decoration: none;
-            border: 1px #92D0BD solid;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        a:hover {
-            background-color: #1ec7e6;
-        }
-    </style>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        let appList = [
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        shop: {
+                            border: "#92D0BD",
+                            text: "#008B8B",
+                            hover: "#1ec7e6",
+                            label: "#20B2AA"
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const appList = [
             {
                 name: "My First Slate",
                 url: "https://play.google.com/store/apps/details?id=com.kish.myfirstslate",
@@ -56,46 +64,62 @@
             }
         ];
 
-        $(document).ready(function () {
-            renderPage();
-        });
+        const playStoreApps = appList.slice(0, 3);
+        const webApps = appList.slice(3, 6);
 
-        function renderPage() {
-            // appList.slice(0, 3).forEach((app) => $("#shop1").append(`<a href="${app.url}">
-            //             <img width="100px" height="100px" src="${app.imageURL}"/>
-            //             <div style="margin-top: 10px">${app.name}</div>
-            //             </a>`));
-            appList.slice(3, 6).forEach((app) => $("#shop2").append(`<a href="${app.url}">
-                        <img width="100px" height="100px" src="${app.imageURL}"/>
-                        <div style="margin-top: 10px">${app.name}</div>
-                        </a>`));
+        function AppCard({ app }) {
+            return (
+                <a
+                    href={app.url}
+                    className="m-2.5 p-2.5 text-shop-text text-lg no-underline border border-shop-border text-center rounded hover:bg-shop-hover"
+                >
+                    <img className="w-[100px] h-[100px]" src={app.imageURL} alt={app.name} />
+                    <div className="mt-2.5">{app.name}</div>
+                </a>
+            );
         }
+
+        function AppShop({ apps }) {
+            return (
+                <div className="flex flex-wrap ml-24">
+                    {apps.map((app) => (
+                        <AppCard key={app.name} app={app} />
+                    ))}
+                </div>
+            );
+        }
+
+        function WebLabel() {
+            return (
+                <div className="mt-8 mb-5 bg-shop-label rounded w-40 p-1.5 text-2xl ml-4">
+                    <div className="flex items-center gap-2">
+                        <img src="web.ico" className="w-10 h-10" alt="Web" />
+                        <span>Web</span>
+                    </div>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <>
+                    <img
+                        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+                        className="w-[200px]"
+                        alt="Get it on Google Play"
+                    />
+                    {/* Play Store apps — currently hidden, matching previous behavior */}
+                    {/* <AppShop apps={playStoreApps} /> */}
+                    <div className="flex flex-wrap ml-24" />
+
+                    <WebLabel />
+                    <AppShop apps={webApps} />
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
     </script>
-</head>
-<body>
-
-<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="200px">
-<div style="display: flex; flex-flow: wrap; margin-left: 100px" id="shop1">
-</div>
-
-<div style="
-    margin-top: 30px;
-    margin-bottom: 20px;
-    background: lightseagreen;
-    border-radius: 5px;
-    width: 160px;
-    padding: 5px;
-    font-size: x-large;
-    margin-left: 15px">
-    <table cellpadding="0">
-        <tr>
-            <td><img src="web.ico" width="40px"></td>
-            <td>Web</td>
-        </tr>
-    </table>
-</div>
-<div style="display: flex; flex-flow: wrap; margin-left: 100px" id="shop2">
-</div>
-
 </body>
 </html>
